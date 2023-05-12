@@ -1,3 +1,18 @@
+import re
+import numpy as np
+import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import plotly.express as px
+import streamlit as st
+
+st.title("Events Similarity Analyzer")
+
+def preprocess(text):
+    text = re.sub(r'[^\w\s]', '', text)
+    text = text.lower()
+    return text
+
 data = ['3x3 team details final',
  'abu dhabi city run ',
  'abu dhabi municipality cycle race ',
@@ -117,21 +132,6 @@ data = ['3x3 team details final',
  'year of tolerance run data',
  'year of tolerance swim data',
  'zoo run ']
-
-import re
-import numpy as np
-import pandas as pd
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-import plotly.express as px
-import streamlit as st
-
-st.title("Events Similarity Analyzer")
-
-def preprocess(text):
-    text = re.sub(r'[^\w\s]', '', text)
-    text = text.lower()
-    return text
 
 preprocessed_data = [preprocess(item) for item in data]
 
