@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-import plotly.express as px
+import plotly.graph_objects as go
 import streamlit as st
 import warnings
 
@@ -149,7 +149,13 @@ filtered_cosine_similarities = np.where(cosine_similarities >= similarity_thresh
 
 df = pd.DataFrame(filtered_cosine_similarities, columns=data, index=data)
 
-fig = px.imshow(df)
+fig = go.Figure(go.Heatmap(
+    z=df.values,
+    x=df.columns,
+    y=df.index,
+    colorscale='Viridis'
+))
+
 fig.update_layout(
     title=f'Similarities between Events (>= {similarity_threshold * 100:.2f}%)',
     xaxis_title='Events',
