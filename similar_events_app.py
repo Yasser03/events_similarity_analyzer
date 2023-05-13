@@ -176,10 +176,10 @@ filtered_similar_events_df = pd.DataFrame(filtered_similar_events.items(), colum
 
 st.write(Styler(filtered_similar_events_df).set_table_styles([{
     'selector': 'th',
-    'props': [('min-width', '150px'), ('max-width', '200px')]
+    'props': [('min-width', '1500px'), ('max-width', '2000px')]
 }, {
     'selector': 'td',
-    'props': [('min-width', '150px'), ('max-width', '200px')]
+    'props': [('min-width', '1500px'), ('max-width', '2000px')]
 }]))
 
 
