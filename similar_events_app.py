@@ -174,5 +174,5 @@ similar_events = {event: [similar_event for similar_event, similarity in row.ite
 filtered_similar_events = {event: similarities for event, similarities in similar_events.items() if similarities}
 filtered_similar_events_df = pd.DataFrame(filtered_similar_events.items(), columns=['Event', 'Similar_Events'])
 
-st.dataframe(df)
+st.dataframe(filtered_similar_events_df)
 
