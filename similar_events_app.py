@@ -174,32 +174,5 @@ similar_events = {event: [similar_event for similar_event, similarity in row.ite
 filtered_similar_events = {event: similarities for event, similarities in similar_events.items() if similarities}
 filtered_similar_events_df = pd.DataFrame(filtered_similar_events.items(), columns=['Event', 'Similar_Events'])
 
-st.write(Styler(filtered_similar_events_df).set_table_styles([{
-    'selector': 'th',
-    'props': [('min-width', '1500px'), ('max-width', '2000px')]
-}, {
-    'selector': 'td',
-    'props': [('min-width', '1500px'), ('max-width', '2000px')]
-}]))
-
-
-
-# Cache the dataframe so it's only loaded once
-# @st.cache_data
-def load_data():
-    return pd.DataFrame(
-        {
-            "first column": [1, 2, 3, 4],
-            "second column": [10, 20, 30, 40],
-        }
-    )
-
-# Boolean to resize the dataframe, stored as a session state variable
-st.checkbox("Use container width", value=False, key="use_container_width")
-
-dff = load_data()
-
-# Display the dataframe and allow the user to stretch the dataframe
-# across the full width of the container, based on the checkbox value
-st.dataframe(dff, use_container_width=False)
+st.dataframe(df, use_container_width=True, use_container_height=True)
 
