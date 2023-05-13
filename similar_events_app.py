@@ -1,6 +1,7 @@
 import re
 import numpy as np
 import pandas as pd
+from pandas.io.formats.style import Styler
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import plotly.graph_objects as go
@@ -173,5 +174,12 @@ similar_events = {event: [similar_event for similar_event, similarity in row.ite
 filtered_similar_events = {event: similarities for event, similarities in similar_events.items() if similarities}
 filtered_similar_events_df = pd.DataFrame(filtered_similar_events.items(), columns=['Event', 'Similar_Events'])
 
-st.dataframe(filtered_similar_events_df, width=1500, height=500)
+st.write(Styler(filtered_similar_events_df).set_table_styles([{
+    'selector': 'th',
+    'props': [('min-width', '150px'), ('max-width', '200px')]
+}, {
+    'selector': 'td',
+    'props': [('min-width', '150px'), ('max-width', '200px')]
+}]))
+
 
