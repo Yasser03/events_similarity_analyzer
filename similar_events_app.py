@@ -201,5 +201,5 @@ dff = load_data()
 
 # Display the dataframe and allow the user to stretch the dataframe
 # across the full width of the container, based on the checkbox value
-st.dataframe(dff, use_container_width=True)
+st.dataframe(dff, use_container_width=False)
 
