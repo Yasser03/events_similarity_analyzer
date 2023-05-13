@@ -149,7 +149,7 @@ filtered_cosine_similarities = np.where(cosine_similarities >= similarity_thresh
 
 df = pd.DataFrame(filtered_cosine_similarities, columns=data, index=data)
 
-fig = px.imshow(df, color_continuous_scale='Viridis')
+fig = px.imshow(df)
 fig.update_layout(
     title=f'Similarities between Events (>= {similarity_threshold * 100:.2f}%)',
     xaxis_title='Events',
