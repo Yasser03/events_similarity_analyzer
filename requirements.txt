@@ -3,4 +3,4 @@ plotly==5.3.1
 streamlit==1.4.0
 scikit-learn
 numpy
-altair
+altair<5
