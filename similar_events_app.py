@@ -164,7 +164,7 @@ fig.update_layout(
     xaxis=dict(tickangle=45, tickfont=dict(size=9)),
     yaxis=dict(tickfont=dict(size=9)),
     height=700,
-    width=1000,
+    width=900,
     margin=dict(l=200, r=50, t=100, b=200)
 )
 
