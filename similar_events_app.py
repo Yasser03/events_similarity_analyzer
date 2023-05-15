@@ -163,7 +163,7 @@ fig.update_layout(
     yaxis_title='Events',
     xaxis=dict(tickangle=45, tickfont=dict(size=8)),
     yaxis=dict(tickfont=dict(size=8)),
-    height=1000,
+    height=800,
     width=1000,
     margin=dict(l=200, r=50, t=100, b=200)
 )
