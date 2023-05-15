@@ -161,9 +161,9 @@ fig.update_layout(
     title=f'Similarities between Events (>= {similarity_threshold * 100:.2f}%)',
     xaxis_title='Events',
     yaxis_title='Events',
-    xaxis=dict(tickangle=45, tickfont=dict(size=8)),
-    yaxis=dict(tickfont=dict(size=8)),
-    height=800,
+    xaxis=dict(tickangle=45, tickfont=dict(size=9)),
+    yaxis=dict(tickfont=dict(size=9)),
+    height=700,
     width=1000,
     margin=dict(l=200, r=50, t=100, b=200)
 )
